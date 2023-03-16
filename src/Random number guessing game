@@ -1,0 +1,35 @@
+import random
+randNum = random.randint(1, 100)
+print("Welcome to number guessing, your goal is to guess the number(1-100) in the least amount of tries")
+attempts = 1
+validNum = False
+play = True
+while play == True:
+  guess = input("Guess:")
+  if guess.isdigit() == False:
+    print("it needs to be a number 1-100")
+  elif (int(guess) > 100) or (int(guess) < 1):
+    print("it needs to be a number 1-100")
+  elif (int(guess)<=100   and int(guess)>=1):
+    if (int(guess) < int(randNum)):
+      print("too low")
+      attempts = attempts+1
+    elif (int(guess) > int(randNum)):
+      print("too high")
+      attempts = attempts+1
+    elif (int(guess) == int(randNum)):
+      print("You guessed the number, it took you", attempts, "attempts")
+      print("do you what to play again y/n")
+      hello = input("")
+      hello =hello.lower()
+      if hello == "y":
+         play = True
+         randNum = random.randint(1, 100)
+         attempts = 1
+      elif hello == "n":
+         print ("Goodbye.")
+         play = False
+      else : 
+        print ("you were supposed to put y or n but now you've gone and broke everything...")
+        play = False
+         
