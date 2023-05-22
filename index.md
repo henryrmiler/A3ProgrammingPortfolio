@@ -22,3 +22,11 @@
 
 <img width="986" alt="Screen Shot 2023-05-22 at 11 56 31 AM" src="https://github.com/henryrmiler/A3ProgrammingPortfolio/assets/112420189/b5a7b6c4-20d4-411c-980f-79a5b59df7b2">
 
+### Number Guessing
+
+### a game where you guess a number between 1 and 100
+
+<img width="713" alt="Screen Shot 2023-05-22 at 12 01 36 PM" src="https://github.com/henryrmiler/A3ProgrammingPortfolio/assets/112420189/bd0c1c90-5410-49db-9e98-a3f5ca0bb9c5">
+
+
+
