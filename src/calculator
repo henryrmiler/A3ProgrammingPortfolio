@@ -1,0 +1,214 @@
+// Henry Miller | Nov 2022 | Calc Project
+Button[] numButtons = new Button[10];
+Button[] opButtons = new Button[12];
+String dVal = "0";
+boolean left = true;
+float l, r, result;
+char op = ' ';
+
+void setup() {
+  size(300, 360);
+  numButtons[0] = new Button(90, 330, 60, 60, '0', color(102, 0, 26));
+  numButtons[1] = new Button(30, 330, 60, 60, '1', color(102, 0, 26));
+  numButtons[2] = new Button(210, 270, 60, 60, '2', color(102, 0, 26));
+  numButtons[3] = new Button(150, 270, 60, 60, '3', color(102, 0, 26));
+  numButtons[4] = new Button(90, 270, 60, 60, '4', color(102, 0, 26));
+  numButtons[5] = new Button(30, 270, 60, 60, '5', color(102, 0, 26));
+  numButtons[6] = new Button(210, 210, 60, 60, '6', color(102, 0, 26));
+  numButtons[7] = new Button(150, 210, 60, 60, '7', color(102, 0, 26));
+  numButtons[8] = new Button(90, 210, 60, 60, '8', color(102, 0, 26));
+  numButtons[9] = new Button(30, 210, 60, 60, '9', color(102, 0, 26));
+  opButtons[0] = new Button(150, 330, 60, 60, '.', color(26, 0, 6));
+  opButtons[1] = new Button(210, 330, 60, 60, '=', color(26, 0, 6));
+  opButtons[2] = new Button(30, 150, 60, 60, '+', color(26, 0, 6));
+  opButtons[3] = new Button(90, 150, 60, 60, '-', color(26, 0, 6));
+  opButtons[4] = new Button(150, 150, 60, 60, 'x', color(26, 0, 6));
+  opButtons[5] = new Button(210, 150, 60, 60, '÷', color(26, 0, 6));
+  opButtons[6] = new Button(270, 30, 60, 60, 'C', color(26, 0, 6));
+  opButtons[7] = new Button(270, 90, 60, 60, '±', color(26, 0, 6));
+  opButtons[8] = new Button(270, 150, 60, 60, 'π', color(26, 0, 6));
+  opButtons[9] = new Button(270, 210, 60, 60, '√', color(26, 0, 6));
+  opButtons[10] = new Button(270, 270, 60, 60, 's', color(26, 0, 6));
+  opButtons[11] = new Button(270, 330, 60, 60, 'r', color(26, 0, 6));
+}
+void draw () {
+  background(5);
+  for (int i = 0; i<numButtons.length; i++) {
+    numButtons[i].display();
+    numButtons[i].hover(mouseX, mouseY);
+  }
+  for (int i = 0; i<opButtons.length; i++) {
+    opButtons[i].display();
+    opButtons[i].hover(mouseX, mouseY);
+  }
+  updateDisplay();
+ textSize(20);
+}
+
+
+
+void mouseReleased() {
+  for (int i = 0; i<numButtons.length; i++) {
+    if (numButtons[i].on && dVal.length()  < 20) {
+      if (dVal.equals("0")) {
+        dVal = str(numButtons[i].val);
+      } else {
+        dVal += str(numButtons[i].val);
+      }
+    }
+    if(left) {
+      l = float(dVal);
+    } else{
+      r = float(dVal);
+    }
+  }
+  for (int i = 0; i<opButtons.length; i++) {
+    if (opButtons[i].on && opButtons[i].val == 'C') {
+      dVal = "0";
+      left =true;
+      l = 0;
+      r = 0;
+      result = 0;
+      op = ' ';
+    } else if (opButtons[i].on && opButtons[i].val == '+') {     
+      op = '+';
+      dVal = "0";
+      left = false;
+    } else if (opButtons[i].on && opButtons[i].val == '-') {
+      op = '-';
+      dVal = "0";
+      left = false;
+    } else if (opButtons[i].on && opButtons[i].val == 'x') {
+      op = 'x';
+      dVal = "0";
+      left = false;
+    } else if (opButtons[i].on && opButtons[i].val == '÷') {
+      op = '÷';
+     dVal = "0";
+      left = false;
+    } else if (opButtons[i].on && opButtons[i].val == 'π') {
+     if (left) {
+        l = PI;
+        dVal = str(l);
+      }
+    } else if (opButtons[i].on && opButtons[i].val == '±') {
+      if (left) {
+        l = l*-1;
+        dVal = str(l);
+      }
+    } else if (opButtons[i].on && opButtons[i].val == '√') {
+      op = '√';
+      performCalculation();
+    } else if (opButtons[i].on && opButtons[i].val == 's') {
+      op = 's';
+     performCalculation();
+    } else if (opButtons[i].on && opButtons[i].val == 'r') {
+      op = 'r';
+      performCalculation();
+      
+    }else if (opButtons[i].on && opButtons[i].val == '=') {
+    performCalculation();
+    }else if (opButtons[i].on && opButtons[i].val == '.') {
+     if(dVal == "0.0"){
+       dVal = "0.";
+     } else {
+       dVal += ".";
+     }
+    }
+  }
+  println("l:" + l + " r:" + r + " op:" + op + " result:" + result + " left:" + left);
+}
+
+void updateDisplay() {
+
+  fill(0);
+  rectMode(CORNER);
+  rect(0, 0, 240, 120);
+  fill(255);
+  textAlign(RIGHT);
+  if(dVal.length() < 6 ) {
+    textSize(30);
+  }else if (dVal.length() < 15) {
+    textSize(30);
+  }else if (dVal.length() < 20) {
+    textSize(20);
+  }else if (dVal.length() < 16) {
+    textSize(30);
+  }else if (dVal.length() < 18) {
+    textSize(30);
+  }else if (dVal.length() < 20) {
+    textSize(30);
+  }
+  text(dVal, 230, 70);
+  
+ 
+}
+
+void performCalculation() {
+  if (op == '+') {
+    result = l + r;
+  } else if (op == '-') {
+    result = l - r;
+  } else if (op == 'x') {
+    result = l * r;
+  } else if (op == '÷') {
+    result = l / r;
+  } else if (op == '√') {
+    result = sqrt(l);
+  } else if (op == 's') {
+    result = l * l ;
+  }else if (op == 'r') {
+    result = random(0.0000,1.0) ;
+  
+  }
+  dVal = str(result);
+  l = result;
+  left = true;
+}
+//BUTTON CLASS
+class Button {
+  //Member Variables
+  int x, y, w, h;
+  char val;
+  color c1, c2;
+  boolean on;
+  color col;
+
+  // Constructor
+  Button(int x, int y, int w, int h, char val, color col) {
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.val = val;
+    this.col=col;
+    
+    c1 = color(128, 0, 32);
+    c2 = color(col);
+    on = false;
+  }
+
+  void display() {
+    if (on) {
+      fill(c1);
+    } else {
+      fill(c2);
+    }
+    stroke(66, 00, 1);
+    rectMode(CENTER);
+    rect(x, y, w, h);
+    fill(255);
+    textAlign(CENTER);
+    if (val == 'r') {
+      text("rand", 270, 330);
+    } else if (val == 's') {
+      text("x²", 270, 270);
+    } else {
+      text(val, x, y);
+    }
+  }
+
+  void hover(int mx, int my) {
+    on = (mx > x-w/2 && mx < x+w/2 && my > y-h/2 && my < y+h/2);
+  }
+}
