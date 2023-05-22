@@ -1,5 +1,5 @@
 # Ello this is henry millers programming portfollio for my programming one class
-##### i didnt get certified for any launguaage for this class
+##### i am cerified for computere programming one
 
 ## here are some of the solo projects ive worked on
 
