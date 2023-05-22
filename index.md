@@ -4,6 +4,16 @@
 
 # :
 
+## Alptraum von James
+
+### this is group project game i made with my team members: tomo sato, ian turner, reid-dzung nguyen. it is a game where you control a character in an arena where enimes chase you and you have a bomerange that bounnces around the screen. my main part in this project was making all of the sprites and helping implement them
+
+#### https://github.com/TomoCroissant/Crab/tree/main/SRC src
+
+https://github.com/TomoCroissant/Crab github link
+
+<img width="1203" alt="Screen Shot 2023-05-22 at 12 11 03 PM" src="https://github.com/henryrmiler/A3ProgrammingPortfolio/assets/112420189/9b26d2fa-f41f-4f3e-8bec-abeeb265e337">
+
 ## Calculator
 
 ### a Calculator app
