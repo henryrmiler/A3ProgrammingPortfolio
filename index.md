@@ -1,6 +1,6 @@
 # Ello this is henry millers programming portfollio
 
-## ere are some of the solo projects ive worked on
+## here are some of the solo projects ive worked on
 
 # :
 
