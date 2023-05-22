@@ -1,4 +1,4 @@
-# Ello this is henry millers programming portfollio
+# Ello this is henry millers programming portfollio for my programming one class
 
 ## here are some of the solo projects ive worked on
 
@@ -7,6 +7,8 @@
 ## Calculator
 
 ### a Calculator app
+
+#### https://github.com/henryrmiler/A3ProgrammingPortfolio/blob/main/src/calculator src
 
 <img width="295" alt="Screen Shot 2023-05-22 at 11 52 50 AM" src="https://github.com/henryrmiler/A3ProgrammingPortfolio/assets/112420189/30594247-0b49-4985-b497-6dc0ca083f0d">
 
@@ -25,6 +27,8 @@
 ## Number Guessing
 
 ### a game where you guess a number between 1 and 100
+
+#### https://github.com/henryrmiler/A3ProgrammingPortfolio/blob/main/src/Random%20number%20guessing%20game src
 
 <img width="713" alt="Screen Shot 2023-05-22 at 12 01 36 PM" src="https://github.com/henryrmiler/A3ProgrammingPortfolio/assets/112420189/bd0c1c90-5410-49db-9e98-a3f5ca0bb9c5">
 
