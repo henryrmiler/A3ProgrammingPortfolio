@@ -1,4 +1,4 @@
-# Ello this is henry millers programming portfollio for my programming one class
+# Hello this is henry millers programming portfollio for my programming one class
 
 ## here are some of the projects ive worked on
 
